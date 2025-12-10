@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAC023 General Science | Comprehensive Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #34495e;
+            --text-light: #7f8c8d;
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Layout */
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--card-bg);
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            margin-bottom: 0.8rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+            background-color: rgba(39, 174, 96, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 4rem;
+            max-width: 1200px;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-top: 1.5rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.1);
+        }
+
+        /* Topic Cards */
+        .topic-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin: 1.5rem 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .chemical-eq {
+            font-family: 'Courier New', monospace;
+            background: #f1f2f6;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: block;
+            text-align: center;
+            margin: 1rem 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            aside {
+                height: auto;
+                position: relative;
+                padding: 1.5rem;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            main {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside>
+        <div class="logo">GAC<span>023</span></div>
+        <nav>
+            <ul>
+                <li><a href="#cell-theory" class="nav-link">Cell Theory</a></li>
+                <li><a href="#photosynthesis" class="nav-link">Photosynthesis</a></li>
+                <li><a href="#classification" class="nav-link">Classification</a></li>
+                <li><a href="#microbial" class="nav-link">Microbial Life</a></li>
+                <li><a href="#ecosystems" class="nav-link">Ecosystems</a></li>
+                <li><a href="#biosphere" class="nav-link">The Biosphere</a></li>
+                <li><a href="#biomes" class="nav-link">Aquatic & Terrestrial</a></li>
+                <li><a href="#resources" class="nav-link">Earth Resources</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <h1>Study Guide</h1>
+            <p class="subtitle">Based on the Science III: General Science Student Manual</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search topics (e.g. 'Prokaryotes', 'Igneous', 'Darwin')...">
+            </div>
+        </header>
+
+        <div id="content-area">
+
+            <!-- TOPIC 1 -->
+            <section id="cell-theory" class="topic-card">
+                <div class="topic-header">
+                    <h2>1. Cell Theory</h2>
+                </div>
+                <p>Biology is the study of life. Modern biology rests on several pillars, one of which is Cell Theory.</p>
+                
+                <h3>Core Principles</h3>
+                <ul>
+                    <li>All organisms are composed of one or more cells.</li>
+                    <li>Cells arise only from pre-existing cells.</li>
+                </ul>
+
+                <h3>History & Key Figures</h3>
+                <div class="highlight-box">
+                    <strong>Robert Hooke (1635–1703):</strong> One of the first to use a microscope. He examined cork and coined the term "cells" because they looked like monk's rooms.
+                </div>
+                <ul>
+                    <li><strong>Matthias Schleiden (1838):</strong> Concluded all plant tissues are made of cells.</li>
+                    <li><strong>Theodore Schwann (1839):</strong> Concluded all animal tissues are made of cells.</li>
+                    <li><strong>Rudolf Virchow (1858):</strong> Added the conclusion that all cells come from pre-existing cells.</li>
+                </ul>
+                <p><em>Implication:</em> There is an unbroken "chain-of-existence" from your cells today back to the earliest cells 3.5 billion years ago.</p>
+            </section>
+
+            <!-- TOPIC 2 -->
+            <section id="photosynthesis" class="topic-card">
+                <div class="topic-header">
+                    <h2>2. Photosynthesis</h2>
+                </div>
+                <p>The process by which plants use light energy and chlorophyll to transform carbon dioxide and water into food (glucose) and oxygen.</p>
+
+                <h3>The Chemical Reaction</h3>
+                <div class="chemical-eq">
+                    Water + Carbon Dioxide → Glucose + Oxygen<br>
+                    6H₂O + 6CO₂ → C₆H₁₂O₆ + 6O₂
+                </div>
+
+                <h3>Key Components</h3>
+                <ul>
+                    <li><strong>Chlorophyll:</strong> The green pigment required to trap light energy.</li>
+                    <li><strong>Glucose:</strong> High-energy food. Plants convert this into <strong>starch</strong> for storage or <strong>cellulose</strong> for building structure (wood).</li>
+                </ul>
+
+                <h3>Testing for Photosynthesis</h3>
+                <p>Experiments in the manual confirm that both <strong>Light</strong> and <strong>Carbon Dioxide</strong> are required.</p>
+                <ul>
+                    <li><strong>Starch Test:</strong> Boil leaf in alcohol (to remove green color), add iodine. Blue-black color = Starch present.</li>
+                    <li><strong>De-starching:</strong> Keep plant in dark for 48 hours to use up stored starch before testing.</li>
+                </ul>
+            </section>
+
+            <!-- TOPIC 3 -->
+            <section id="classification" class="topic-card">
+                <div class="topic-header">
+                    <h2>3. Classification of Living Things</h2>
+                </div>
+                <p>Scientists classify life to communicate universally. The system groups similar organisms and excludes different ones.</p>
+
+                <h3>The 5 Kingdoms</h3>
+                <ol>
+                    <li><strong>Animalia:</strong> Multicellular, eukaryotic, heterotrophic (eats food), mobile.</li>
+                    <li><strong>Plantae:</strong> Multicellular, eukaryotic, autotrophic (photosynthesis).</li>
+                    <li><strong>Fungi:</strong> Eukaryotic, heterotrophic (absorbs nutrients), cell walls of chitin (e.g., mushrooms, yeast).</li>
+                    <li><strong>Protista:</strong> Eukaryotic, mostly unicellular (e.g., amoeba, algae).</li>
+                    <li><strong>Prokaryotae (Monera):</strong> Unicellular, <strong>no nucleus</strong> (e.g., bacteria).</li>
+                </ol>
+
+                <h3>Linnaean Hierarchy</h3>
+                <p>Devised by Carl von Linné (Linnaeus). From broad to specific:</p>
+                <div class="highlight-box">
+                    Kingdom → Phylum → Class → Order → Family → Genus → Species<br>
+                    <em>Memory Aid: Kings Play Chess On Fine Grain Sand</em>
+                </div>
+
+                <h3>Binomial Nomenclature</h3>
+                <p>Naming species using Latin. Format: <em>Genus species</em> (e.g., <em>Homo sapiens</em>). The genus is capitalized; species is lowercase.</p>
+            </section>
+
+            <!-- TOPIC 4 -->
+            <section id="microbial" class="topic-card">
+                <div class="topic-header">
+                    <h2>4. Microbial Life</h2>
+                </div>
+                
+                <h3>Prokaryotes</h3>
+                <p>Organisms without a nucleus (Bacteria and Archaea). They are microscopic (1-10 µm) and outnumber all other living things.</p>
+                <ul>
+                    <li><strong>Impact:</strong> Can cause disease (Black Death, Cholera) but are also essential for digestion, skin health, and nutrient cycling.</li>
+                    <li><strong>Bioremediation:</strong> Using bacteria to clean oil spills or hazardous waste.</li>
+                </ul>
+
+                <h3>Shapes of Bacteria</h3>
+                <ul>
+                    <li><strong>Cocci:</strong> Spherical (e.g., Streptococci).</li>
+                    <li><strong>Spirilla:</strong> Spiral-shaped (e.g., Syphilis bacteria).</li>
+                </ul>
+
+                <h3>Viruses</h3>
+                <p>Non-living parasites. They consist only of a protein coat (capsid) and a nucleic acid core (DNA or RNA). They cannot reproduce on their own; they must hijack a host cell.</p>
+            </section>
+
+            <!-- TOPIC 5 -->
+            <section id="ecosystems" class="topic-card">
+                <div class="topic-header">
+                    <h2>5. Ecosystems</h2>
+                </div>
+                <p><strong>Ecology</strong> is the study of interactions between organisms and their environment.</p>
+
+                <h3>Structure</h3>
+                <ul>
+                    <li><strong>Biotic Factors:</strong> Living components (plants, animals).</li>
+                    <li><strong>Abiotic Factors:</strong> Non-living components (temperature, water, rocks, energy).</li>
+                    <li><strong>Hierarchy:</strong> Organism → Population → Community → Ecosystem.</li>
+                </ul>
+
+                <h3>Energy Flow (Trophic Levels)</h3>
+                <p>Energy enters from the Sun and moves through levels. Only about <strong>10%</strong> of energy transfers from one level to the next.</p>
+                <ol>
+                    <li><strong>Producers (Autotrophs):</strong> Plants, Algae.</li>
+                    <li><strong>Primary Consumers (Herbivores):</strong> Eat plants.</li>
+                    <li><strong>Secondary Consumers (Carnivores):</strong> Eat herbivores.</li>
+                    <li><strong>Tertiary Consumers:</strong> Top predators.</li>
+                </ol>
+                <p><strong>Food Web:</strong> A complex network of interconnected food chains.</p>
+            </section>
+
+            <!-- TOPIC 6 -->
+            <section id="biosphere" class="topic-card">
+                <div class="topic-header">
+                    <h2>6. The Biosphere</h2>
+                </div>
+                <p>The Biosphere is the giant, interconnected machine of Earth. It includes all ecosystems, the Earth's crust (Lithosphere), waters (Hydrosphere), and air (Atmosphere).</p>
+                
+                <h3>Cycling</h3>
+                <p>Earth is a closed system for matter. Elements like Carbon, Nitrogen, and Water are constantly recycled through the biosphere via biological and geological processes.</p>
+            </section>
+
+            <!-- TOPIC 7 -->
+            <section id="biomes" class="topic-card">
+                <div class="topic-header">
+                    <h2>7. Aquatic & Terrestrial Ecosystems</h2>
+                </div>
+
+                <h3>Aquatic Ecosystems</h3>
+                <p>Life originated in the sea. Water acts as a stable environment due to high heat capacity.</p>
+                <ul>
+                    <li><strong>Plankton:</strong> Drifting organisms.
+                        <ul>
+                            <li><em>Phytoplankton:</em> Producers (e.g., diatoms, green algae).</li>
+                            <li><em>Zooplankton:</em> Consumers (e.g., krill, microscopic larvae).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Vulnerability:</strong> Waterways integrate pollution from the entire land watershed, making them sensitive to sewage and runoff.</li>
+                </ul>
+
+                <h3>Terrestrial Ecosystems (Biomes)</h3>
+                <p>Land-based ecosystems defined primarily by <strong>temperature</strong> and <strong>rainfall</strong>.</p>
+                <p><strong>The 9 Major Biomes:</strong> Tropical Rainforest, Savannah, Desert (Hot/Cold), Polar Ice, Chaparral, Temperate Grasslands, Temperate Deciduous Forest, Taiga (Coniferous Forest), Tundra.</p>
+            </section>
+
+            <!-- TOPIC 8 -->
+            <section id="resources" class="topic-card">
+                <div class="topic-header">
+                    <h2>8. Earth Resources: Rocks & Soils</h2>
+                </div>
+                
+                <h3>Structure of Earth</h3>
+                <ul>
+                    <li><strong>Crust:</strong> Thin outer layer (25-40km thick).</li>
+                    <li><strong>Mantle:</strong> Dense rock, partly liquid (magma).</li>
+                    <li><strong>Core:</strong> Liquid outer, solid inner (Iron/Sulfur).</li>
+                </ul>
+
+                <h3>Rock Types</h3>
+                <ul>
+                    <li><strong>Igneous:</strong> Cooled magma/lava. <em>Granite</em> (cooled slowly underground), <em>Basalt</em> (cooled quickly on surface).</li>
+                    <li><strong>Sedimentary:</strong> Compressed sediments. <em>Sandstone, Shale, Limestone.</em></li>
+                    <li><strong>Metamorphic:</strong> Changed by heat/pressure. Limestone becomes <em>Marble</em>.</li>
+                </ul>
+
+                <h3>Soils & Erosion</h3>
+                <ul>
+                    <li><strong>Composition:</strong> Weathered minerals (Sand, Silt, Clay) + Humus (organic matter).</li>
+                    <li><strong>pH:</strong> Measures acidity. Ideal for plants is 5.5–7.5.</li>
+                    <li><strong>Erosion:</strong> Removal of soil by wind or water.
+                        <ul>
+                            <li><em>Water Erosion:</em> Causes rills and gullies. Prevented by terraces/tree cover.</li>
+                            <li><em>Wind Erosion:</em> Common in arid areas (e.g., loess soil).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<script>
+    // Navigation highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Search Filtering
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.topic-card');
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        
+        cards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+            if (text.includes(term)) {
+                card.style.display = 'block';
+                // Reset animation
+                card.style.animation = 'none';
+                card.offsetHeight; /* trigger reflow */
+                card.style.animation = 'fadeUp 0.6s forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
