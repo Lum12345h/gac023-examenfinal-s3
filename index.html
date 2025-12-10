@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAC023 General Science | Comprehensive Guide</title>
+    
+    <!-- Chemistry Favicon (Flask Icon) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M22 22 V6 H42 V22 L56 58 H8 Z' fill='%2327ae60' stroke='%232c3e50' stroke-width='3' stroke-linejoin='round'/%3E%3Ccircle cx='26' cy='36' r='3' fill='white' opacity='0.6'/%3E%3Ccircle cx='38' cy='48' r='4' fill='white' opacity='0.6'/%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -59,6 +63,14 @@
             margin-bottom: 2rem;
             font-weight: 700;
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo svg {
+            width: 24px;
+            height: 24px;
         }
 
         .logo span {
@@ -236,7 +248,15 @@
 
 <div class="container">
     <aside>
-        <div class="logo">GAC<span>023</span></div>
+        <!-- Logo with inline SVG icon for visual consistency -->
+        <div class="logo">
+            <svg viewBox="0 0 64 64">
+                <path d="M22 22 V6 H42 V22 L56 58 H8 Z" fill="#27ae60" stroke="#2c3e50" stroke-width="4" stroke-linejoin="round"/>
+                <circle cx="26" cy="36" r="3" fill="white" opacity="0.6"/>
+                <circle cx="38" cy="48" r="4" fill="white" opacity="0.6"/>
+            </svg>
+            GAC<span>023</span>
+        </div>
         <nav>
             <ul>
                 <li><a href="#cell-theory" class="nav-link">Cell Theory</a></li>
